@@ -192,13 +192,14 @@ def get_results():
         }), 500
 
 
-# -----------------------------------------------------------------------------
+# ----------------------------------------------------
 # Application Runner
-# -----------------------------------------------------------------------------
+# ----------------------------------------------------
 
 if __name__ == "__main__":
-    print("==================================================")
-    print("  Starting Online Quiz Application (Flask Backend)")
-    print("  Local URL: http://127.0.0.1:5000")
-    print("==================================================")
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    print(" Starting Online Quiz Application (Flask Backend)")
+    print(f" Local URL: http://0.0.0.0:{port}")
+    app.run(host="0.0.0.0", port=port)
+
